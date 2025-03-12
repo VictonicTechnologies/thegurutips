@@ -16,7 +16,7 @@ export const footerData = {
     {
       "title": "Legal",
       "links": [
-        { "text": "Terms of Service", "href": "/terms" },
+        // { "text": "Terms of Service", "href": "/terms" },
         { "text": "Privacy Policy", "href": "/privacy" },
         { "text": "Research Disclaimer", "href": "/disclaimer" },
         { "text": "Research Methodology", "href": "/methodology" }
