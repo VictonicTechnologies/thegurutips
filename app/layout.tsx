@@ -18,6 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="facebook-domain-verification" content="vmipvfw2zf8fez9ytdmtqwp2ymimtf" />
+      </head>
       <body style={{ fontFamily: fontStack }} className="antialiased">
         <NavigationProgress />
         <Header />
