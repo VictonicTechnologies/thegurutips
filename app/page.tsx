@@ -1,10 +1,9 @@
-import { ClientProvider } from './ClientProvider';
-import HomePage from './HomePage';
+import dynamic from 'next/dynamic';
+
+const HomePage = dynamic(() => import('./HomePage'), {
+  ssr: false
+});
 
 export default function Page() {
-  return (
-    <ClientProvider>
-      <HomePage />
-    </ClientProvider>
-  );
+  return <HomePage />;
 }

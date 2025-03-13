@@ -47,7 +47,7 @@ export function ManualPaymentModal({ isOpen, onClose, onSuccess, planName, price
 
       // Check if code has been used before
       if (mpesaStorage.isCodeUsed(transactionCode)) {
-        toast.error('This M-PESA transaction message is invalid');
+        toast.error('This M-PESA transaction has already been used');
         return;
       }
 
@@ -73,7 +73,7 @@ export function ManualPaymentModal({ isOpen, onClose, onSuccess, planName, price
         onSuccess();
         onClose();
       } else {
-        toast.error('This M-PESA transaction message is invalid');
+        toast.error('Payment amount does not match the package price');
       }
     } catch (error) {
       toast.error('Invalid M-PESA message format');
@@ -84,44 +84,44 @@ export function ManualPaymentModal({ isOpen, onClose, onSuccess, planName, price
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="bg-black/90 border border-white/20">
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold flex items-center gap-2">
-            <CreditCard className="w-5 h-5 text-blue-500" />
-            Manual Payment Validation
+          <DialogTitle className="text-xl font-semibold flex items-center gap-2 text-white">
+            <CreditCard className="w-5 h-5 text-emerald-500" />
+            How To Pay With M-PESA
           </DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div className="text-center mb-2">
-            <p className="text-2xl font-bold">{price}</p>
-            <p className="text-sm text-gray-500">{planName}</p>
+            <p className="text-2xl font-bold text-white">{price}</p>
+            <p className="text-sm text-blue-400">{planName}</p>
           </div>
 
-          <div className="space-y-2 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg text-sm">
+          <div className="space-y-2 bg-black/60 p-4 rounded-lg text-sm border border-white/10">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-medium">Till Number:</span>
+              <span className="font-medium text-white">Till Number:</span>
               <div className="flex items-center gap-2">
-                <code className="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">{TILL_NUMBER}</code>
+                <code className="bg-white/10 px-2 py-0.5 rounded text-white">{TILL_NUMBER}</code>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-6 w-6 p-0"
+                  className="h-6 w-6 p-0 text-white hover:text-emerald-500"
                   onClick={copyTillNumber}
                 >
                   {copied ? (
-                    <Check className="h-4 w-4 text-green-500" />
+                    <Check className="h-4 w-4 text-emerald-500" />
                   ) : (
                     <Copy className="h-4 w-4" />
                   )}
                 </Button>
               </div>
             </div>
-            <ol className="list-decimal ml-4 space-y-1">
+            <ol className="list-decimal ml-4 space-y-1 text-white/90">
               <li>Open M-PESA on your phone</li>
               <li>Select "Lipa na M-PESA"</li>
               <li>Choose "Buy Goods and Services"</li>
               <li>Enter the Till Number shown above</li>
-              <li>Enter amount: <span className="font-mono bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">{price.replace(/[^0-9.]/g, '')}</span></li>
+              <li>Enter amount: <span className="font-mono bg-white/10 px-2 py-0.5 rounded">{price.replace(/[^0-9.]/g, '')}</span></li>
               <li>Enter your M-PESA PIN and confirm</li>
               <li>Copy the confirmation message you receive</li>
               <li>Paste the message below and click validate</li>
@@ -129,25 +129,30 @@ export function ManualPaymentModal({ isOpen, onClose, onSuccess, planName, price
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium">
+            <label className="text-sm font-medium text-white">
               M-PESA Message
             </label>
             <Textarea
               placeholder="Paste your M-PESA confirmation message here..."
               value={mpesaMessage}
               onChange={(e) => setMpesaMessage(e.target.value)}
-              className="h-24"
+              className="h-24 bg-black/60 border-white/20 text-white placeholder:text-white/50"
             />
           </div>
 
           <div className="flex justify-end gap-3">
-            <Button type="button" variant="outline" onClick={onClose}>
+            <Button 
+              type="button" 
+              variant="ghost" 
+              onClick={onClose}
+              className="text-white hover:text-white/80"
+            >
               Cancel
             </Button>
             <Button 
               onClick={validatePayment}
               disabled={!mpesaMessage.trim() || isValidating}
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white"
             >
               {isValidating ? (
                 <>

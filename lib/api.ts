@@ -2,8 +2,12 @@ import axios from 'axios';
 
 const BASE_URL = 'https://derekkipkemoi.github.io/SmartScoreAnalysis.com';
 
+// Create axios instance with cache busting
 export const api = axios.create({
   baseURL: BASE_URL,
+  params: {
+    _: Date.now() // Add timestamp to prevent caching
+  }
 });
 
 export const getCards = async () => {

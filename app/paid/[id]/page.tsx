@@ -1,5 +1,6 @@
 import { getCards } from '@/lib/api';
 import type { CardData } from '@/lib/api';
+import { ClientProvider } from '@/app/ClientProvider';
 import PaidPredictionsClient from './PaidPredictionsClient';
 import { notFound } from 'next/navigation';
 
@@ -25,5 +26,9 @@ export default async function PaidPredictions({ params }: { params: { id: string
     notFound();
   }
 
-  return <PaidPredictionsClient id={params.id} initialPackageDetails={packageDetails} />;
+  return (
+    <ClientProvider>
+      <PaidPredictionsClient id={params.id} initialPackageDetails={packageDetails} />
+    </ClientProvider>
+  );
 }

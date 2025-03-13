@@ -16,7 +16,7 @@ export function Footer() {
                 <ul className="space-y-2 text-sm">
                   {section.links?.map((link) => (
                     <li key={link.text}>
-                      {"href" in link ? ( // ✅ Check if 'href' exists
+                      {link.href ? (
                         <a
                           href={link.href}
                           className="text-gray-400 hover:text-white transition-colors"

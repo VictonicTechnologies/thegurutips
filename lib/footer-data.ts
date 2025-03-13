@@ -7,16 +7,16 @@ export const footerData = {
     {
       "title": "Quick Links",
       "links": [
-        { "text": "Free Insight", "href": "/free-analysis" },
-        { "text": "Pro Insight", "href": "/paid/basic-predictions" },
-        { "text": "Elite Insight", "href": "/paid/premium-predictions" },
+        { "text": "Free Odds", "href": "/free-analysis" },
+        { "text": "Pro Odds", "href": "/paid/basic-predictions" },
+        { "text": "Elite Odds", "href": "/paid/premium-predictions" },
         { "text": "Results", "href": "/results" }
       ]
     },
     {
       "title": "Legal",
       "links": [
-        // { "text": "Terms of Service", "href": "/terms" },
+        { "text": "Terms of Service", "href": "/terms" },
         { "text": "Privacy Policy", "href": "/privacy" },
         { "text": "Research Disclaimer", "href": "/disclaimer" },
         { "text": "Research Methodology", "href": "/methodology" }

@@ -17,10 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <meta name="facebook-domain-verification" content="vmipvfw2zf8fez9ytdmtqwp2ymimtf" />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body style={{ fontFamily: fontStack }} className="antialiased">
         <NavigationProgress />
         <Header />
