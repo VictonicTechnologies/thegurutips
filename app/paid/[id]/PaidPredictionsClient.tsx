@@ -87,9 +87,9 @@ export default function PaidPredictionsClient({ id, initialPackageDetails }: Pai
               <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 {packageDetails.title}
               </h1>
-              <p className="text-sm text-white/90 max-w-2xl mx-auto">
+              {/* <p className="text-sm text-white/90 max-w-2xl mx-auto">
                 {packageDetails.description}
-              </p>
+              </p> */}
             </div>
           </motion.div>
 

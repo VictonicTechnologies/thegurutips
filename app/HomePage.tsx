@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Trophy, Star, Crown, History, TrendingUp, Percent, Shield } from "lucide-react";
+import { ArrowRight, Trophy, Star, Crown, History, TrendingUp, Percent, Shield, Calendar } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { getCards } from '@/lib/api';
@@ -11,6 +11,7 @@ import type { CardData } from '@/lib/api';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
+import { format } from 'date-fns';
 
 const FootballIcon = () => (
   <img 
@@ -111,21 +112,28 @@ export default function HomePage() {
           >
             <div className="absolute inset-0 bg-black/60"></div>
             <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              {/* <motion.div 
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-flex items-center justify-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-emerald-500"
-              >
-                <Percent className="h-4 w-4 text-white" />
-                <span className="text-sm font-semibold text-white">97% Success Rate</span>
-              </motion.div> */}
               <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 Football Winning Predictions
               </h1>
-              <p className="text-sm text-white/90 max-w-2xl mx-auto">
+              <p className="text-sm text-white/90 max-w-2xl mx-auto mb-6">
                 Expert-driven football predictions and in-depth analysis for informed decisions.
               </p>
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ 
+                  duration: 0.3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  repeatDelay: 0.5
+                }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-400 shadow-lg shadow-emerald-500/30"
+              >
+                <Calendar className="h-5 w-5 text-white" />
+                <span className="text-base font-bold text-white">
+                  Games for Today: {format(new Date(), 'dd MMMM yyyy')}
+                </span>
+              </motion.div>
             </div>
           </motion.div>
 

@@ -67,11 +67,8 @@ export default function FreePredictionsPage() {
                 <span className="text-sm font-semibold text-white">Today's Free Analysis</span>
               </motion.div> */}
               <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                Free Odds of the Day
+                Free Odds Today
               </h1>
-              <p className="text-sm text-white/90 max-w-2xl mx-auto">
-                AI-powered odds and predictions analysis of thousands of data points for high-confidence insights.
-              </p>
             </div>
           </motion.div>
 

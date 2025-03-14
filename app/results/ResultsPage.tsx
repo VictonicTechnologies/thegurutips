@@ -76,9 +76,7 @@ export default function ResultsPage() {
               <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 Our History
               </h1>
-              <p className="text-sm text-white/90 max-w-2xl mx-auto">
-                Historical accuracy of our sports analysis and research insights.
-              </p>
+              
             </div>
           </motion.div>
 
