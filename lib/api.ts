@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://derekkipkemoi.github.io/SmartScoreAnalysis.com';
+const BASE_URL = 'https://victonictechnologies.github.io/thegurutips.com/';
 
 // Create axios instance with cache busting
 export const api = axios.create({
