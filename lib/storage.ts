@@ -10,8 +10,8 @@ export interface MpesaTransaction {
 }
 
 const STORAGE_KEYS = {
-  SUBSCRIPTIONS: 'proelitestats_subscriptions',
-  MPESA_CODES: 'proelitestats_mpesa_codes'
+  SUBSCRIPTIONS: 'thegurutips_subscriptions',
+  MPESA_CODES: 'thegurutips_mpesa_codes'
 } as const;
 
 // Helper to get midnight of the current day

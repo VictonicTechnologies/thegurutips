@@ -25,11 +25,11 @@ export const footerData = {
     {
       "title": "Contact",
       "links": [
-        { "text": "Email: research@proelitestats.com" },
+        { "text": "Email: research@thegurutips.com" },
         { "text": "Support Hours: 24/7" },
         { "text": "Response Time: Within 2 hours" }
       ]
     }
   ],
-  "copyright": "© " + new Date().getFullYear() + " ProEliteStats. All rights reserved. Dedicated to providing professional sports analytics and research. Past performance trends do not guarantee future results."
+  "copyright": "© " + new Date().getFullYear() + " TheGuruTips. All rights reserved. Dedicated to providing professional sports analytics and research. Past performance trends do not guarantee future results."
 }

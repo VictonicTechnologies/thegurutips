@@ -24,7 +24,7 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <Soccer className="h-8 w-8 text-gradient-primary" />
             <span className="text-xl font-bold text-gradient-primary">
-              ProEliteStats
+              TheGuruTips
             </span>
           </Link>
 

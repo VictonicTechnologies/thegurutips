@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 const fontStack = 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
 
 export const metadata = {
-  title: 'ProEliteStats',
+  title: 'TheGuruTips',
   description: 'Expert Sports Analysis & Predictions'
 };
 
